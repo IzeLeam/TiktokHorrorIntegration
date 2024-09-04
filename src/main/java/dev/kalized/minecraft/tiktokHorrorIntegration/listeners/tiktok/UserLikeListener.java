@@ -9,17 +9,14 @@ import org.bukkit.event.Listener;
 public class UserLikeListener implements Listener {
 
     private final int likePerSpawn = TiktokHorrorIntegration.getInstance().getConfig().getInt("tiktok.like-per-spawn");
-    //private int likeCountDown = likePerSpawn;
+    private int likeCountDown = 0;
 
     @EventHandler
     public void onUserLike(UserLikeEvent event) {
-        /*
-        likeCountDown -= event.getLikes();
-        while (likeCountDown <= 0) {
+        likeCountDown += event.getLikes();
+        while (likeCountDown >= likePerSpawn) {
             EntityManager.spawnEntity();
-            likeCountDown += likePerSpawn;
+            likeCountDown -= likePerSpawn;
         }
-        */
-        System.out.println("UserLikeEvent");
     }
 }

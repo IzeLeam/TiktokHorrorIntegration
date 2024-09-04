@@ -10,7 +10,7 @@ public class UserFollowListener implements Listener {
 
     @EventHandler
     public void onUserFollow(UserFollowEvent event) {
-        PlayerManager.getInstance().sendTitle("§4" + event.getUser().getProfileName(), "§8just followed", 0, 40, 0);
+        PlayerManager.getInstance().sendTitle("§4" + event.getUser().getProfileName(), "§8just followed", 10, 40, 20);
         EntityManager.spawnEntity();
     }
 }

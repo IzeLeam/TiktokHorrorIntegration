@@ -54,10 +54,8 @@ public class TikTokClient {
                                     System.out.println("Error! " + event.getException().getMessage());
                                 })
                         .buildAndConnect();
-                } else {
-                    System.out.println(host + " is not on live");
                 }
             }
-        }, 0, 60 * 20);
+        }, 0, 10 * 20);
     }
 }
