@@ -1,0 +1,4 @@
+name: TiktokHorrorIntegration
+version: '1.0'
+main: dev.kalized.minecraft.tiktokHorrorIntegration.TiktokHorrorIntegration
+api-version: '1.21'

@@ -1,0 +1,16 @@
+zone:
+  x1: 18
+  y1: 70
+  z1: 5
+  x2: -7
+  y2: 81
+  z3: 13
+
+tiktok:
+  hosts:
+    - neagari
+    - newob_realife
+  events:
+    follow:
+        type: tnt
+        amount: 1
