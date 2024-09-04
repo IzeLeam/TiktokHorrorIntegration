@@ -4,30 +4,24 @@ import io.github.jwdeveloper.tiktok.data.models.users.User;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
-public class UserLikeEvent extends Event {
+public class UserFollowEvent extends Event {
 
     private static final HandlerList handlerList = new HandlerList();
 
     private final User user;
-    private final int likes;
-    private final int totalLikes;
+    private final int totalFollowers;
 
-    public UserLikeEvent(final User user, final int likes, final int totalLikes) {
+    public UserFollowEvent(final User user, final int totalFollowers) {
         this.user = user;
-        this.likes = likes;
-        this.totalLikes = totalLikes;
+        this.totalFollowers = totalFollowers;
     }
 
     public User getUser() {
         return user;
     }
 
-    public int getLikes() {
-        return likes;
-    }
-
-    public int getTotalLikes() {
-        return totalLikes;
+    public int getTotalFollowers() {
+        return totalFollowers;
     }
 
     @Override

@@ -4,13 +4,10 @@ zone:
   z1: 5
   x2: -7
   y2: 81
-  z3: 13
+  z2: 13
 
 tiktok:
+  like_per_spawn: 100
   hosts:
     - neagari
     - newob_realife
-  events:
-    follow:
-        type: tnt
-        amount: 1

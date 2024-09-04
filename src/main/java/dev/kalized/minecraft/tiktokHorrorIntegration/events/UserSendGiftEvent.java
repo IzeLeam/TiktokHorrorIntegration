@@ -1,33 +1,28 @@
 package dev.kalized.minecraft.tiktokHorrorIntegration.events;
 
+import io.github.jwdeveloper.tiktok.data.models.gifts.Gift;
 import io.github.jwdeveloper.tiktok.data.models.users.User;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
-public class UserLikeEvent extends Event {
+public class UserSendGiftEvent extends Event {
 
     private static final HandlerList handlerList = new HandlerList();
 
     private final User user;
-    private final int likes;
-    private final int totalLikes;
+    private final Gift gift;
 
-    public UserLikeEvent(final User user, final int likes, final int totalLikes) {
+    public UserSendGiftEvent(final User user, final Gift gift) {
         this.user = user;
-        this.likes = likes;
-        this.totalLikes = totalLikes;
+        this.gift = gift;
     }
 
     public User getUser() {
         return user;
     }
 
-    public int getLikes() {
-        return likes;
-    }
-
-    public int getTotalLikes() {
-        return totalLikes;
+    public Gift getGift() {
+        return gift;
     }
 
     @Override

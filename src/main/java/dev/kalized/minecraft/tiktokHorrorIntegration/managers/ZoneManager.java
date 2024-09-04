@@ -2,6 +2,7 @@ package dev.kalized.minecraft.tiktokHorrorIntegration.managers;
 
 import dev.kalized.minecraft.tiktokHorrorIntegration.TiktokHorrorIntegration;
 import dev.kalized.minecraft.tiktokHorrorIntegration.utils.Cuboid;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
 import org.bukkit.util.Vector;
@@ -30,8 +31,7 @@ public class ZoneManager {
         final int y2 = config.getInt("zone.y2");
         final int z2 = config.getInt("zone.z2");
 
-        this.cuboid = new Cuboid(x1, y1, z1, x2, y2, z2);
-        this.cuboid.setHeightLimit(false);
+        this.cuboid = new Cuboid(x1, y1, z1, x2, y2, z2);;
     }
 
     public boolean isInZone(Location location) {
@@ -46,11 +46,15 @@ public class ZoneManager {
         return this.cuboid.isInCuboid(entity.getLocation());
     }
 
-    public int getDistanceFromCenter(Location location) {
-        return this.cuboid.getDistanceFromCenter(location);
-    }
-
     public Vector getCenter() {
         return this.cuboid.getCenter();
+    }
+
+    public Location getRandomPosition() {
+        final int x = (int) (Math.random() * (this.cuboid.getX2() - this.cuboid.getX1()) + this.cuboid.getX1());
+        final int y = (int) (Math.random() * (this.cuboid.getY2() - this.cuboid.getY1()) + this.cuboid.getY1());
+        final int z = (int) (Math.random() * (this.cuboid.getZ2() - this.cuboid.getZ1()) + this.cuboid.getZ1());
+
+        return new Location(Bukkit.getWorld("world"), x, y, z);
     }
 }

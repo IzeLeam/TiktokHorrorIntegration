@@ -3,7 +3,6 @@ package dev.kalized.minecraft.tiktokHorrorIntegration.managers;
 import dev.kalized.minecraft.tiktokHorrorIntegration.TiktokHorrorIntegration;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
-import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitTask;
 
@@ -30,7 +29,7 @@ public class PlayerManager {
 
     public void setPlayer(final Player player) {
         this.player = player;
-        player.setGameMode(GameMode.SURVIVAL);
+        //player.setGameMode(GameMode.SURVIVAL);todo
         initActionBarTask();
     }
 
@@ -40,6 +39,9 @@ public class PlayerManager {
     }
 
     public void sendTitle(String title, String subtitle, int fadeIn, int stay, int fadeOut) {
+        if (player == null) {
+            return;
+        }
         player.sendTitle(title, subtitle, fadeIn, stay, fadeOut);
     }
 
